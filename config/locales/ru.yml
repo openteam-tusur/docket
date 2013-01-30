@@ -1,0 +1,15 @@
+ru:
+  enumerize:
+    degree:
+      bachelor:          бакалавриат
+      magistracy:        магистратура
+      specialty:         специалитет
+
+    duration:
+      four_years:        4 года
+      five_years:        5 лет
+
+    tuition:
+      fulltime:          очная
+      extramural:        заочная
+      evening:           очно-заочная
