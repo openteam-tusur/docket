@@ -8,4 +8,11 @@ class Stream < ActiveRecord::Base
   enumerize :degree, in: [:bachelor, :magistracy, :specialty], default: :bachelor
   enumerize :duration, in: [:four_years, :five_years] , default: :five_years
 
+  def to_s
+    "".tap do |string|
+      string << code
+      string << "&nbsp;&mdash;&nbsp;"
+      string << title
+    end.html_safe
+  end
 end
