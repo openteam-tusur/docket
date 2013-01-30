@@ -1,0 +1,23 @@
+<h1>Listing entrance_exams</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entrance_exams.each do |entrance_exam| %>
+  <tr>
+    <td><%= entrance_exam.title %></td>
+    <td><%= link_to 'Show', entrance_exam %></td>
+    <td><%= link_to 'Edit', edit_entrance_exam_path(entrance_exam) %></td>
+    <td><%= link_to 'Destroy', entrance_exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entrance exam', new_entrance_exam_path %>
