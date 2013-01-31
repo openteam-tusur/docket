@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131025738) do
+ActiveRecord::Schema.define(:version => 20130131041351) do
 
   create_table "departments", :force => true do |t|
     t.string   "title"
@@ -76,9 +76,10 @@ ActiveRecord::Schema.define(:version => 20130131025738) do
     t.string   "duration"
     t.string   "degree"
     t.integer  "sector_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "plan_id"
+    t.string   "degree_title"
   end
 
   add_index "streams", ["sector_id"], :name => "index_streams_on_sector_id"

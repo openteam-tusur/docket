@@ -1,507 +1,544 @@
-2012:
-  code:         010500
-  title:        Прикладная математика и информатика
-  degree:
-    code:       62
-    title:      Бакалавр прикладной математики и информатики
-    duration:   4
-
-    code:       68
-    title:      Магистр прикладной математики и информатики
-    duration:   6
-
-  code:         020801
-  title:        Экология
-  degree:
-    code:       65
-    title:      Эколог
-    duration:   5
-
-  code:         030500
-  title:        Юриспруденция
-  degree:
-    code:       62
-    title:      Бакалавр юриспруденции
-    duration:   4
-
-  code:         030501
-  title:        Юриспруденция
-    code:       65
-    title:      Юрист
-    duration:   5
-
-  code:         040100
-  title:        Социальная работа
-  degree:
-    code:       62
-    title:      Бакалавр социальной работы
-    duration:   4
-
-  code:         040101
-  title:        Социальная работа
-  degree:
-    code:       65
-    title:      Специалист по социальной работе
-    duration:   5
-
-  code:         040104
-  title:        Ораганизация работы с молодежью
-  degree:
-    code:       65
-    title:      Специалист по работе с молодежью
-    duration:   5
-
-  code:         080100
-  title:        Экономика
-  degree:
-    code:       62
-    title:      Бакалавр экономики
-    duration:   4
-
-  code:         080100
-  title:        Экономика
-  degree:
-    code:       68
-    title:      Магистр экономики
-    duration:   6
-
-  code:         080105
-  title:        Финансы и кредит
-  degree:
-    code:       65
-    title:      Экономист
-    duration:   5
-
-  code:         080109
-  title:        Бухгалтерский учет, анализ и аудит
-  degree:
-    code:       65
-    title:      Экономист
-    duration:   5
-
-  code:         080116
-  title:        Математические методы в экономике
-  degree:
-    code:       65
-    title:      Экономист-математик
-    duration:   5
-
-  code:         080500
-  title:        Менеджмент
-  degree:
-    code:       62
-    title:      Бакалавр менеджмента
-    duration:   4
-
-  code:         080500
-  title:        Менеджмент
-  degree:
-    code:       68
-    title:      Магистр менеджмента
-    duration:   6
-
-  code:         080502
-  title:        Экономика и управление на предприятии (в машиностроении)
-  degree:
-    code:       65
-    title:      Экономист-менеджер
-    duration:   5
-
-  code:         080503
-  title:        Антикризисное управление
-  degree:
-    code:       65
-    title:      Экономист-менеджер
-    duration:   5
-
-  code:         080504
-  title:        Государственное и муниципальное управление
-  degree:
-    code:       65
-    title:      Менеджер
-    duration:   5
-
-  code:         080505
-  title:        Управление персоналом
-  degree:
-    code:       65
-    title:      Менеджер
-    duration:   5
-
-  code:         080507
-  title:        Менеджмент организации
-  degree:
-    code:       65
-    title:      Менеджер
-    duration:   5
-
-  code:         080700
-  title:        Бизнес информатика
-  degree:
-    code:       62
-    title:      Бакалавр бизнес информатики
-    duration:   4
-
-  code:         080700
-  title:        Бизнес информатика
-  degree:
-    code:       68
-    title:      Магистр бизнес информатики
-    duration:   6
-
-  code:         080801
-  title:        Прикладная информатика (в юриспурденции, в менеджменте, в экономике)
-  degree:
-    code:       65
-    title:      Информатик-юрист, информатик-менеджер, информатик-экономист
-    duration:   5
-
-  code:         090102
-  title:        Компьютерная безопасность
-  degree:
-    code:       65
-    title:      Математик
-    duration:   5.5
-
-  code:         090103
-  title:        Организация и технология защиты информации
-  degree:
-    code:       65
-    title:      Специалист по защите информации
-    duration:   5
-
-  code:         090104
-  title:        Комплексная защита объектов защиты информации
-  degree:
-    code:       65
-    title:      Специалист по защите информации
-    duration:   5
-
-  code:         090105
-  title:        Комплексное обеспечение информационной безопасности автоматизированных систем
-  degree:
-    code:       65
-    title:      Специалист по защите информации
-    duration:   5
-
-  code:         090106
-  title:        Информационная безопасность телекоммуникационных систем
-  degree:
-    code:       65
-    title:      Специалист по защите информации
-    duration:   5.5
-
-  code:         090305
-  title:        Информационно-аналитические системы безопасности
-  degree:
-    code:       65
-    title:      Специалист
-    duration:   5
-
-  code:         100101
-  title:        Сервис
-  degree:
-    code:       65
-    title:      Специалист по сервису
-    duration:   5
-
-  code:         160905
-  title:        Техническая эксплуатация транспортного радиооборудования
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5.5
-
-  code:         190500
-  title:        Эксплуатация транспортных средств
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         200600
-  title:        Фотоника и оптоинформатика
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         200600
-  title:        Фотоника и оптоинформатика
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         210100
-  title:        Электроника и микроэлектроника
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         210100
-  title:        Электроника и микроэлектроника
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         210104
-  title:        Микроэлектроника и твердотельная электроника
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210105
-  title:        Электронные приборы и устройства
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210106
-  title:        Промышленная электроника
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210200
-  title:        Проектирование и технология электронных средств
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         210201
-  title:        Проектирование и технология радиоэлектронных средств
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210202
-  title:        Проектирование и технология электронно-вычислительных средств
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210300
-  title:        Радиотехника
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         210300
-  title:        Радиотехника
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         210302
-  title:        Радиотехника
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210303
-  title:        Бытовая радиоэлектронная аппаратура
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210304
-  title:        Радиоэлектронные системы
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210312
-  title:        Аудиовизуальная техника
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210400
-  title:        Телекоммуникации
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         210400
-  title:        Телекоммуникации
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         210401
-  title:        Физика и техника оптической связи
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210402
-  title:        Средства связи с подвижными объектами
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210403
-  title:        Защищенные системы саязи
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210405
-  title:        Радиосвязь, радиовещание и телевидение
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         210600
-  title:        Нанотехнологии
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         220100
-  title:        Системный анализ и управление
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         220200
-  title:        Автоматизация и управление
-  degree:
-    code:       62
-    title:      Бакалавр техникии технологии
-    duration:   4
-
-  code:         220200
-  title:        Автоматизация и управление
-  degree:
-    code:       68
-    title:      Магистр техникии и технологии
-    duration:   6
-
-  code:         220201
-  title:        Управление и информатика в технических системах
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         220301
-  title:        Автоматизация технологических процессов и производств (в приборостроении)
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         220501
-  title:        Управление качеством
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         220600
-  title:        Инноватика
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         220600
-  title:        Инноватика
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         220601
-  title:        Управление инновациями
-  degree:
-    code:       65
-    title:      Инженер-менеджер
-    duration:   5
-
-  code:         221000
-  title:        Мехатроника и робототехника
-  degree:
-    code:       62
-    title:      Бакалавр
-    duration:   4
-
-  code:         221000
-  title:        Мехатроника и робототехника
-  degree:
-    code:       68
-    title:      Магистр
-    duration:   2
-
-  code:         230100
-  title:        Информатика и вычислительная техника
-  degree:
-    code:       62
-    title:      Бакалавр техники и технологии
-    duration:   4
-
-  code:         230100
-  title:        Информатика и вычислительная техника
-  degree:
-    code:       68
-    title:      Магистр техники и технологии
-    duration:   6
-
-  code:         230102
-  title:        Автоматизированные системы обработки информации и управления
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         230104
-  title:        Системы автоматизированного проектирования
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         230105
-  title:        Программное обеспечение вычислительной техники и автоматизированных систем
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
-
-  code:         230200
-  title:        Информационные системы
-  degree:
-    code:       62
-    title:      Бакалавр информационных систем
-    duration:   4
-
-  code:         280101
-  title:        Безопасность жизнедеятельности в техносфере
-  degree:
-    code:       65
-    title:      Инженер
-    duration:   5
+"2012":
+  -
+    code:         "010500"
+    title:        Прикладная математика и информатика
+    degree:
+      code:       "62"
+      title:      Бакалавр прикладной математики и информатики
+      duration:   "4"
+  -
+    code:         "010500"
+    title:        Прикладная математика и информатика
+    degree:
+      code:       "68"
+      title:      Магистр прикладной математики и информатики
+      duration:   "6"
+  -
+    code:         "020801"
+    title:        Экология
+    degree:
+      code:       "65"
+      title:      Эколог
+      duration:   "5"
+  -
+    code:         "030500"
+    title:        Юриспруденция
+    degree:
+      code:       "62"
+      title:      Бакалавр юриспруденции
+      duration:   "4"
+  -
+    code:         "030501"
+    title:        Юриспруденция
+    degree:
+      code:       "65"
+      title:      Юрист
+      duration:   "5"
+  -
+    code:         "040100"
+    title:        Социальная работа
+    degree:
+      code:       "62"
+      title:      Бакалавр социальной работы
+      duration:   "4"
+  -
+    code:         "040101"
+    title:        Социальная работа
+    degree:
+      code:       "65"
+      title:      Специалист по социальной работе
+      duration:   "5"
+  -
+    code:         "040104"
+    title:        Ораганизация работы с молодежью
+    degree:
+      code:       "65"
+      title:      Специалист по работе с молодежью
+      duration:   "5"
+  -
+    code:         "080100"
+    title:        Экономика
+    degree:
+      code:       "62"
+      title:      Бакалавр экономики
+      duration:   "4"
+  -
+    code:         "080100"
+    title:        Экономика
+    degree:
+      code:       "68"
+      title:      Магистр экономики
+      duration:   "6"
+  -
+    code:         "080105"
+    title:        Финансы и кредит
+    degree:
+      code:       "65"
+      title:      Экономист
+      duration:   "5"
+  -
+    code:         "080109"
+    title:        Бухгалтерский учет, анализ и аудит
+    degree:
+      code:       "65"
+      title:      Экономист
+      duration:   "5"
+  -
+    code:         "080116"
+    title:        Математические методы в экономике
+    degree:
+      code:       "65"
+      title:      Экономист-математик
+      duration:   "5"
+  -
+    code:         "080500"
+    title:        Менеджмент
+    degree:
+      code:       "62"
+      title:      Бакалавр менеджмента
+      duration:   "4"
+  -
+    code:         "080500"
+    title:        Менеджмент
+    degree:
+      code:       "68"
+      title:      Магистр менеджмента
+      duration:   "6"
+  -
+    code:         "080502"
+    title:        Экономика и управление на предприятии (в машиностроении)
+    degree:
+      code:       "65"
+      title:      Экономист-менеджер
+      duration:   "5"
+  -
+    code:         "080503"
+    title:        Антикризисное управление
+    degree:
+      code:       "65"
+      title:      Экономист-менеджер
+      duration:   "5"
+  -
+    code:         "080504"
+    title:        Государственное и муниципальное управление
+    degree:
+      code:       "65"
+      title:      Менеджер
+      duration:   "5"
+  -
+    code:         "080505"
+    title:        Управление персоналом
+    degree:
+      code:       "65"
+      title:      Менеджер
+      duration:   "5"
+  -
+    code:         "080507"
+    title:        Менеджмент организации
+    degree:
+      code:       "65"
+      title:      Менеджер
+      duration:   "5"
+  -
+    code:         "080700"
+    title:        Бизнес информатика
+    degree:
+      code:       "62"
+      title:      Бакалавр бизнес информатики
+      duration:   "4"
+  -
+    code:         "080700"
+    title:        Бизнес информатика
+    degree:
+      code:       "68"
+      title:      Магистр бизнес информатики
+      duration:   "6"
+  -
+    code:         "080801"
+    title:        Прикладная информатика (в юриспурденции, в менеджменте, в экономике)
+    degree:
+      code:       "65"
+      title:      Информатик-юрист, информатик-менеджер, информатик-экономист
+      duration:   "5"
+  -
+    code:         "090102"
+    title:        Компьютерная безопасность
+    degree:
+      code:       "65"
+      title:      Математик
+      duration:   "5.5"
+  -
+    code:         "090103"
+    title:        Организация и технология защиты информации
+    degree:
+      code:       "65"
+      title:      Специалист по защите информации
+      duration:   "5"
+  -
+    code:         "090104"
+    title:        Комплексная защита объектов защиты информации
+    degree:
+      code:       "65"
+      title:      Специалист по защите информации
+      duration:   "5"
+  -
+    code:         "090105"
+    title:        Комплексное обеспечение информационной безопасности автоматизированных систем
+    degree:
+      code:       "65"
+      title:      Специалист по защите информации
+      duration:   "5"
+  -
+    code:         "090106"
+    title:        Информационная безопасность телекоммуникационных систем
+    degree:
+      code:       "65"
+      title:      Специалист по защите информации
+      duration:   "5.5"
+  -
+    code:         "090305"
+    title:        Информационно-аналитические системы безопасности
+    degree:
+      code:       "65"
+      title:      Специалист
+      duration:   "5"
+  -
+    code:         "100101"
+    title:        Сервис
+    degree:
+      code:       "65"
+      title:      Специалист по сервису
+      duration:   "5"
+  -
+    code:         "160905"
+    title:        Техническая эксплуатация транспортного радиооборудования
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5.5"
+  -
+    code:         "190500"
+    title:        Эксплуатация транспортных средств
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+  -
+    code:         "200600"
+    title:        Фотоника и оптоинформатика
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+  -
+    code:         "200600"
+    title:        Фотоника и оптоинформатика
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+  -
+    code:         "210100"
+    title:        Электроника и микроэлектроника
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+  -
+    code:         "210100"
+    title:        Электроника и микроэлектроника
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+  -
+    code:         "210104"
+    title:        Микроэлектроника и твердотельная электроника
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+  -
+    code:         "210105"
+    title:        Электронные приборы и устройства
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210106"
+    title:        Промышленная электроника
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+  -
+    code:         "210200"
+    title:        Проектирование и технология электронных средств
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+  -
+    code:         "210201"
+    title:        Проектирование и технология радиоэлектронных средств
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+  -
+    code:         "210202"
+    title:        Проектирование и технология электронно-вычислительных средств
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210300"
+    title:        Радиотехника
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "210300"
+    title:        Радиотехника
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+
+  -
+    code:         "210302"
+    title:        Радиотехника
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210303"
+    title:        Бытовая радиоэлектронная аппаратура
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210304"
+    title:        Радиоэлектронные системы
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210312"
+    title:        Аудиовизуальная техника
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210400"
+    title:        Телекоммуникации
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "210400"
+    title:        Телекоммуникации
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+
+  -
+    code:         "210401"
+    title:        Физика и техника оптической связи
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210402"
+    title:        Средства связи с подвижными объектами
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210403"
+    title:        Защищенные системы саязи
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210405"
+    title:        Радиосвязь, радиовещание и телевидение
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "210600"
+    title:        Нанотехнологии
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "220100"
+    title:        Системный анализ и управление
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "220200"
+    title:        Автоматизация и управление
+    degree:
+      code:       "62"
+      title:      Бакалавр техникии технологии
+      duration:   "4"
+
+  -
+    code:         "220200"
+    title:        Автоматизация и управление
+    degree:
+      code:       "68"
+      title:      Магистр техникии и технологии
+      duration:   "6"
+
+  -
+    code:         "220201"
+    title:        Управление и информатика в технических системах
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "220301"
+    title:        Автоматизация технологических процессов и производств (в приборостроении)
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "220501"
+    title:        Управление качеством
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "220600"
+    title:        Инноватика
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "220600"
+    title:        Инноватика
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+
+  -
+    code:         "220601"
+    title:        Управление инновациями
+    degree:
+      code:       "65"
+      title:      Инженер-менеджер
+      duration:   "5"
+
+  -
+    code:         "221000"
+    title:        Мехатроника и робототехника
+    degree:
+      code:       "62"
+      title:      Бакалавр
+      duration:   "4"
+
+  -
+    code:         "221000"
+    title:        Мехатроника и робототехника
+    degree:
+      code:       "68"
+      title:      Магистр
+      duration:   "2"
+
+  -
+    code:         "230100"
+    title:        Информатика и вычислительная техника
+    degree:
+      code:       "62"
+      title:      Бакалавр техники и технологии
+      duration:   "4"
+
+  -
+    code:         "230100"
+    title:        Информатика и вычислительная техника
+    degree:
+      code:       "68"
+      title:      Магистр техники и технологии
+      duration:   "6"
+
+  -
+    code:         "230102"
+    title:        Автоматизированные системы обработки информации и управления
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "230104"
+    title:        Системы автоматизированного проектирования
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "230105"
+    title:        Программное обеспечение вычислительной техники и автоматизированных систем
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"
+
+  -
+    code:         "230200"
+    title:        Информационные системы
+    degree:
+      code:       "62"
+      title:      Бакалавр информационных систем
+      duration:   "4"
+
+  -
+    code:         "280101"
+    title:        Безопасность жизнедеятельности в техносфере
+    degree:
+      code:       "65"
+      title:      Инженер
+      duration:   "5"

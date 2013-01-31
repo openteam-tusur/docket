@@ -6,8 +6,8 @@ class Stream < ActiveRecord::Base
   has_many :intakes
   attr_accessible :code, :degree, :duration, :title
 
-  enumerize :degree, in: [:bachelor, :magistracy, :specialty], default: :bachelor
-  enumerize :duration, in: [:four_years, :five_years] , default: :five_years
+  enumerize :degree, in: ['62', '65', '68'], default: '62'
+  enumerize :duration, in: [:two_years, :four_years, :five_years, :five_and_half_years, :six_years] , default: :five_years
 
   def to_s
     "".tap do |string|
