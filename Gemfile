@@ -10,9 +10,10 @@ end
 
 group :default do
   gem 'enumerize'
+  gem 'has_scope'
   gem 'inherited_resources'
   gem 'jquery-rails'
-  gem 'has_scope'
+  gem 'nested_form'
   gem 'pg'
   gem 'rails', '3.2.11'
   gem 'simple_form'

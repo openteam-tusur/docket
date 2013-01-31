@@ -71,6 +71,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
+    nested_form (0.3.1)
     options (2.3.0)
       fattr
     pg (0.14.1)
@@ -149,6 +150,7 @@ DEPENDENCIES
   has_scope
   inherited_resources
   jquery-rails
+  nested_form
   pg
   progress_bar
   rails (= 3.2.11)

@@ -1,3 +1,10 @@
-<%= simple_form_for [@degree, @intake] do |f| %>
+<%= simple_nested_form_for [@degree, @intake] do |f| %>
   <%= f.input :budget %>
+  <%= f.input :price %>
+  <%= f.input :tuition %>
+
+  <%= f.fields_for :specializations %>
+  <%= f.link_to_add 'добавить профиль', :specializations %>
+
+  <%= f.submit %>
 <% end %>
