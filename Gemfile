@@ -15,6 +15,7 @@ group :default do
   gem 'jquery-rails'
   gem 'nested_form'
   gem 'pg'
+  gem 'progress_bar'
   gem 'rails', '3.2.11'
   gem 'simple_form'
   gem 'sqlite3'
@@ -24,7 +25,6 @@ group :development do
   gem 'hirb'
   gem 'rails-erd'
   gem 'rvm-capistrano'
-  gem 'progress_bar'
 end
 
 group :production do
