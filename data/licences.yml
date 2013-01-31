@@ -407,3 +407,101 @@
     code:       65
     title:      Инженер
     duration:   5
+
+  code:         220301
+  title:        Автоматизация технологических процессов и производств (в приборостроении)
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
+
+  code:         220501
+  title:        Управление качеством
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
+
+  code:         220600
+  title:        Инноватика
+  degree:
+    code:       62
+    title:      Бакалавр техники и технологии
+    duration:   4
+
+  code:         220600
+  title:        Инноватика
+  degree:
+    code:       68
+    title:      Магистр техники и технологии
+    duration:   6
+
+  code:         220601
+  title:        Управление инновациями
+  degree:
+    code:       65
+    title:      Инженер-менеджер
+    duration:   5
+
+  code:         221000
+  title:        Мехатроника и робототехника
+  degree:
+    code:       62
+    title:      Бакалавр
+    duration:   4
+
+  code:         221000
+  title:        Мехатроника и робототехника
+  degree:
+    code:       68
+    title:      Магистр
+    duration:   2
+
+  code:         230100
+  title:        Информатика и вычислительная техника
+  degree:
+    code:       62
+    title:      Бакалавр техники и технологии
+    duration:   4
+
+  code:         230100
+  title:        Информатика и вычислительная техника
+  degree:
+    code:       68
+    title:      Магистр техники и технологии
+    duration:   6
+
+  code:         230102
+  title:        Автоматизированные системы обработки информации и управления
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
+
+  code:         230104
+  title:        Системы автоматизированного проектирования
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
+
+  code:         230105
+  title:        Программное обеспечение вычислительной техники и автоматизированных систем
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
+
+  code:         230200
+  title:        Информационные системы
+  degree:
+    code:       62
+    title:      Бакалавр информационных систем
+    duration:   4
+
+  code:         280101
+  title:        Безопасность жизнедеятельности в техносфере
+  degree:
+    code:       65
+    title:      Инженер
+    duration:   5
