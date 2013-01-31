@@ -3,7 +3,7 @@
   <ul>
     <% stream.degrees.each do |degree| %>
       <li>
-        <%= degree %>
+        <%= degree %>, <%= link_to 'Редактировать', edit_degree_path(degree) %>
       </li>
     <% end %>
   </ul>

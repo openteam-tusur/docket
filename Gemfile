@@ -15,6 +15,7 @@ group :default do
   gem 'has_scope'
   gem 'pg'
   gem 'rails', '3.2.11'
+  gem 'simple_form'
   gem 'sqlite3'
 end
 

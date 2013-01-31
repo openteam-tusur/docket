@@ -1,4 +1,11 @@
 ru:
+  activerecord:
+    attributes:
+      degree:
+        code:            код
+        title:           название
+        duration:        срок обучения
+
   enumerize:
     degree:
       bachelor:          бакалавриат
