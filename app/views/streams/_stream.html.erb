@@ -1,3 +1,10 @@
 <li>
   <%= stream %>
+  <ul>
+    <% stream.degrees.each do |degree| %>
+      <li>
+        <%= degree %>
+      </li>
+    <% end %>
+  </ul>
 </li>

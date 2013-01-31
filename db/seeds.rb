@@ -28,6 +28,16 @@ def import_entrance_exams
   end
 end
 
+def import_sectors
+  puts 'Импорт отраслей ▼'
+  array = YAML.load_file(Rails.root.join('data', 'sectors.yml'))['sectors']
+  bar = ProgressBar.new(array.count)
+  array.each do |element|
+    plan.sectors.find_or_create_by_title(element)
+    bar.increment!
+  end
+end
+
 def import_streams
   puts 'Импорт направлений подготовки ▼'
   array = YAML.load_file(Rails.root.join('data', 'licences.yml'))
@@ -57,3 +67,4 @@ end
 import_departments
 import_entrance_exams
 import_streams
+import_sectors

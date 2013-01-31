@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20130131050134) do
 
   add_index "degrees", ["stream_id"], :name => "index_degrees_on_stream_id"
 
+  create_table "degrees_entrance_exams", :id => false, :force => true do |t|
+    t.integer "degree_id"
+    t.integer "entrance_exam_id"
+  end
+
   create_table "departments", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
@@ -37,11 +42,6 @@ ActiveRecord::Schema.define(:version => 20130131050134) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "plan_id"
-  end
-
-  create_table "entrance_exams_degrees", :id => false, :force => true do |t|
-    t.integer "entrance_exam_id"
-    t.integer "stream_id"
   end
 
   create_table "intakes", :force => true do |t|

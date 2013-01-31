@@ -6,8 +6,11 @@ ru:
       specialty:         специалитет
 
     duration:
-      four_years:        4 года
-      five_years:        5 лет
+      two_years:            2 года
+      four_years:           4 года
+      five_years:           5 лет
+      five_and_half_years:  5.5 лет
+      six_years:            6 лет
 
     tuition:
       fulltime:          очная
