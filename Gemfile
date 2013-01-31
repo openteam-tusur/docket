@@ -22,6 +22,12 @@ end
 
 group :development do
   gem 'hirb'
-  gem 'progress_bar'
   gem 'rails-erd'
+  gem 'rvm-capistrano'
+  gem 'progress_bar'
 end
+
+group :production do
+  gem  'airbrake'
+end
+
