@@ -4,6 +4,7 @@
     <% stream.degrees.each do |degree| %>
       <li>
         <%= degree %>, <%= link_to 'Редактировать', edit_degree_path(degree) %>
+        <%= link_to "добавить набор", new_degree_intake_path(degree) %>
       </li>
     <% end %>
   </ul>
