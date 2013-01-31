@@ -21,6 +21,7 @@ group :default do
 end
 
 group :development do
-  gem 'rails-erd'
+  gem 'hirb'
   gem 'progress_bar'
+  gem 'rails-erd'
 end

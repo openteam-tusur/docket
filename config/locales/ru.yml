@@ -2,24 +2,35 @@ ru:
   activerecord:
     attributes:
       degree:
-        code:            код
-        title:           название
-        duration:        срок обучения
+        code:                 Код
+        title:                Название
+        duration:             Срок обучения
+
+      intake:
+        budget:               Количество бюджет мест
+        price:                Стоимость обучения
+        tuition:              Форма обучения
+
+      specialization:
+        title:                Название
+        density:              Количество человек на место
+        passing_grade:        Проходной балл
+        department_id:        Кафедра
 
   enumerize:
     degree:
-      bachelor:          бакалавриат
-      magistracy:        магистратура
-      specialty:         специалитет
+      bachelor:               Бакалавриат
+      magistracy:             Магистратура
+      specialty:              Специалитет
 
     duration:
-      two_years:            2 года
-      four_years:           4 года
-      five_years:           5 лет
-      five_and_half_years:  5.5 лет
-      six_years:            6 лет
+      two_years:              2 года
+      four_years:             4 года
+      five_years:             5 лет
+      five_and_half_years:    5.5 лет
+      six_years:              6 лет
 
     tuition:
-      fulltime:          очная
-      extramural:        заочная
-      evening:           очно-заочная
+      fulltime:               Очная
+      extramural:             Заочная
+      evening:                Очно-заочная
