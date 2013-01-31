@@ -1,5 +1,5 @@
 def plan
-  Plan.find_or_create(:by_year => '2013')
+  Plan.find_or_create_by_year('2013')
 end
 
 def import_departments
