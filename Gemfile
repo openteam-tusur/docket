@@ -19,4 +19,5 @@ end
 
 group :development do
   gem 'rails-erd'
+  gem 'progress_bar'
 end
