@@ -12,6 +12,7 @@ group :default do
   gem 'enumerize'
   gem 'inherited_resources'
   gem 'jquery-rails'
+  gem 'has_scope'
   gem 'pg'
   gem 'rails', '3.2.11'
   gem 'sqlite3'

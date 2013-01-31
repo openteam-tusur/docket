@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131041351) do
+ActiveRecord::Schema.define(:version => 20130131050134) do
+
+  create_table "degrees", :force => true do |t|
+    t.string   "code"
+    t.string   "title"
+    t.string   "duration"
+    t.integer  "stream_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "degrees", ["stream_id"], :name => "index_degrees_on_stream_id"
 
   create_table "departments", :force => true do |t|
     t.string   "title"
@@ -28,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20130131041351) do
     t.integer  "plan_id"
   end
 
-  create_table "entrance_exams_streams", :id => false, :force => true do |t|
+  create_table "entrance_exams_degrees", :id => false, :force => true do |t|
     t.integer "entrance_exam_id"
     t.integer "stream_id"
   end
@@ -73,8 +84,6 @@ ActiveRecord::Schema.define(:version => 20130131041351) do
   create_table "streams", :force => true do |t|
     t.string   "code"
     t.string   "title"
-    t.string   "duration"
-    t.string   "degree"
     t.integer  "sector_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

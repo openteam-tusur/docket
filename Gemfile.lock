@@ -143,6 +143,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   enumerize
+  has_scope
   inherited_resources
   jquery-rails
   pg

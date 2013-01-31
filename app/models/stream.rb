@@ -1,13 +1,10 @@
 class Stream < ActiveRecord::Base
-  extend Enumerize
+
+  attr_accessible :code, :title
 
   belongs_to :sector
-  has_and_belongs_to_many :entrance_exams
-  has_many :intakes
-  attr_accessible :code, :degree, :duration, :title
-
-  enumerize :degree, in: ['62', '65', '68'], default: '62'
-  enumerize :duration, in: [:two_years, :four_years, :five_years, :five_and_half_years, :six_years] , default: :five_years
+  has_many :degrees
+  has_many :intakes, :through => :degrees
 
   def to_s
     "".tap do |string|
