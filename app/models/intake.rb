@@ -2,6 +2,7 @@ class Intake < ActiveRecord::Base
   extend Enumerize
 
   belongs_to :stream
+  belongs_to :plan
   has_many :specializations
   attr_accessible :budget, :price, :tuition, :year
 

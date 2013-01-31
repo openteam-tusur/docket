@@ -3,6 +3,7 @@ class Stream < ActiveRecord::Base
 
   belongs_to :sector
   has_and_belongs_to_many :entrance_exams
+  has_many :intakes
   attr_accessible :code, :degree, :duration, :title
 
   enumerize :degree, in: [:bachelor, :magistracy, :specialty], default: :bachelor

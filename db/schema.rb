@@ -11,19 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130093105) do
+ActiveRecord::Schema.define(:version => 20130131025738) do
 
   create_table "departments", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "abbr"
+    t.integer  "plan_id"
   end
 
   create_table "entrance_exams", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "plan_id"
   end
 
   create_table "entrance_exams_streams", :id => false, :force => true do |t|
@@ -43,10 +45,17 @@ ActiveRecord::Schema.define(:version => 20130130093105) do
 
   add_index "intakes", ["stream_id"], :name => "index_intakes_on_stream_id"
 
+  create_table "plans", :force => true do |t|
+    t.string   "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sectors", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "plan_id"
   end
 
   create_table "specializations", :force => true do |t|
@@ -69,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130130093105) do
     t.integer  "sector_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "plan_id"
   end
 
   add_index "streams", ["sector_id"], :name => "index_streams_on_sector_id"
