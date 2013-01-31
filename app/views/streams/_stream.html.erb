@@ -1,11 +1,24 @@
-<li>
-  <%= stream %>
-  <ul>
+<li class='streem'>
+  <h2><%= stream %></h2>
+  <ul class='degrees'>
     <% stream.degrees.each do |degree| %>
-      <li>
-        <%= degree %>, <%= link_to 'Редактировать', edit_degree_path(degree) %>
-        <%= link_to "добавить набор", new_degree_intake_path(degree) %>
-      </li>
+      <ul class='degree'>
+        <h3><%= degree %></h3>
+
+        <% degree.intakes.each do |intake| %>
+          <%= intake.tuition_text %>
+        <% end %>
+
+        <div class='exams'>
+          Вступительные испытания:
+          <%= degree.entrance_exams.map(&:title).join(', ') %>
+        </div>
+
+        <div class='actions'>
+          <%= link_to 'Редактировать', edit_degree_path(degree) %>
+          <%= link_to 'Добавить набор', new_degree_intake_path(degree) %>
+        </div>
+      </ul>
     <% end %>
   </ul>
 </li>
