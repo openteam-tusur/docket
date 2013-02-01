@@ -6,6 +6,8 @@ class Stream < ActiveRecord::Base
   has_many :degrees
   has_many :intakes, :through => :degrees
 
+  delegate :title, :to => :sector, :prefix => true, :allow_nil => true
+
   def to_s
     "".tap do |string|
       string << code

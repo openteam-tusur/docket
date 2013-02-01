@@ -2,31 +2,28 @@
 @import 'compass/utilities'
 @import 'compass/css3'
 
-html, body
-  font-size: 1em
-  line-height: 1.62em
+html
+  font-size: 12px
 
-h1
-  font-size: 22px
-
-h2
-  font-size: 20px
-
-h3
-  font-size: 18px
-
-h4
-  font-size: 16px
+  body
+    font-family: 'Arial', sans-serif
+    font-size: 1em
+    line-height: 1.62em
 
 .body_wrapper
+  +clearfix
   width: 100%
 
-.list
-  ul
-    li
-      margin: 1em
+table
+  border: 1px solid #999
+  border-collapse: collapse
+  width: 100%
 
-  .degrees
-    background: #EFEFEF
-    padding: 3px
+  thead
+    font-size: 10px
+
+  tr
+    td, th
+      border: 1px solid #999
+      text-align: center
 

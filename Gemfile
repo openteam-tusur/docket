@@ -23,6 +23,7 @@ group :default do
 end
 
 group :development do
+  gem 'brakeman'
   gem 'hirb'
   gem 'rails-erd'
   gem 'rvm-capistrano'

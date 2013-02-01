@@ -1,24 +1,35 @@
-<li class='streem'>
-  <h2><%= stream %></h2>
-  <ul class='degrees'>
-    <% stream.degrees.each do |degree| %>
-      <ul class='degree'>
-        <h3><%= degree %></h3>
-
-        <% degree.intakes.each do |intake| %>
-          <%= intake.tuition_text %>
-        <% end %>
-
-        <div class='exams'>
-          Вступительные испытания:
-          <%= degree.entrance_exams.map(&:title).join(', ') %>
-        </div>
-
-        <div class='actions'>
-          <%= link_to 'Редактировать', edit_degree_path(degree) %>
-          <%= link_to 'Добавить набор', new_degree_intake_path(degree) %>
-        </div>
-      </ul>
+<tr>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>><%= stream.code %></td>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>><%= stream.title %></td>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>><%= stream.sector_title %></td>
+</tr>
+<% stream.degrees.each do |degree| %>
+  <tr>
+    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= "#{stream.code}.#{degree.code}" %></td>
+    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>>
+      <%= degree.title %>
+      <%= link_to 'Редактировать', edit_degree_path(degree) %>
+      <%= link_to 'Добавить набор', new_degree_intake_path(degree) %>
+    </td>
+    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= degree.duration_text %></td>
+    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= degree.entrance_exams.map(&:title).join(', ') %></td>
+  </tr>
+  <% degree.intakes.each do |intake| %>
+    <tr>
+      <td rowspan=<%= intake.specializations.count+1 %>>
+        <%= intake.tuition_text %>
+        <%= link_to 'Редактировать набор', edit_degree_intake_path(degree, intake) %>
+      </td>
+      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.budget %></td>
+      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.price %></td>
+    </tr>
+    <% intake.specializations.each do |specialization| %>
+      <tr>
+        <td><%= specialization.department_abbr %></td>
+        <td><%= specialization.title %></td>
+        <td><%= specialization.density %></td>
+        <td><%= specialization.passing_grade %></td>
+      </tr>
     <% end %>
-  </ul>
-</li>
+  <% end %>
+<% end %>
