@@ -9,6 +9,7 @@ group :assets do
 end
 
 group :default do
+  gem 'airbrake'
   gem 'configliere'
   gem 'enumerize'
   gem 'has_scope'
@@ -30,7 +31,6 @@ group :development do
 end
 
 group :production do
-  gem 'airbrake'
   gem 'unicorn'
 end
 
