@@ -9,6 +9,7 @@ group :assets do
 end
 
 group :default do
+  gem 'configliere'
   gem 'enumerize'
   gem 'has_scope'
   gem 'inherited_resources'
