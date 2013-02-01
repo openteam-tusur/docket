@@ -148,16 +148,13 @@ GEM
     responders (0.9.3)
       railties (~> 3.1)
     ruby-graphviz (1.0.8)
-<<<<<<< HEAD
-    rvm-capistrano (1.2.7)
-      capistrano (>= 2.0.0)
-=======
     ruby2ruby (2.0.2)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
     ruby_parser (3.1.1)
       sexp_processor (~> 4.1)
->>>>>>> over again stream list
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -195,11 +192,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   airbrake
-=======
   brakeman
->>>>>>> over again stream list
   coffee-rails (~> 3.2.1)
   compass-rails
   configliere
