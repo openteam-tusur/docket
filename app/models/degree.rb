@@ -11,9 +11,12 @@ class Degree < ActiveRecord::Base
   enumerize :code, in: ['62', '65', '68'], default: '62'
   enumerize :duration, in: [:two_years, :four_years, :five_years, :five_and_half_years, :six_years] , default: :five_years
 
+  delegate :code, :to => :stream, :prefix => true
+  delegate :sector_title, :to => :stream
+
   def to_s
     "".tap do |string|
-      string << code
+      string << "#{stream_code}.#{code}"
       string << "&nbsp;&mdash;&nbsp;"
       string << title
       string << "&nbsp;&mdash;&nbsp;"

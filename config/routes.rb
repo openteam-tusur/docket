@@ -1,4 +1,5 @@
 Docket::Application.routes.draw do
+  mount API::Docket => '/'
   resources :streams, :only => [:index]
 
   resources :degrees, :only => [:edit, :update] do

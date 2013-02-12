@@ -12,6 +12,7 @@ group :default do
   gem 'airbrake'
   gem 'configliere'
   gem 'enumerize'
+  gem 'grape'
   gem 'has_scope'
   gem 'inherited_resources'
   gem 'jquery-rails'
@@ -21,13 +22,14 @@ group :default do
   gem 'rails', '3.2.11'
   gem 'simple_form'
   gem 'sqlite3'
+  gem 'sunspot_rails'
 end
 
 group :development do
-  gem 'brakeman'
   gem 'hirb'
   gem 'rails-erd'
   gem 'rvm-capistrano'
+  gem 'sunspot_solr'
 end
 
 group :production do

@@ -3,27 +3,111 @@
 @import 'compass/css3'
 
 html
+  background: #fefefe
   font-size: 12px
+  color: #211426
 
   body
-    font-family: 'Arial', sans-serif
+    font-family: 'Helvetica', 'Charcoal', 'Trebuchet MS', sans-serif
     font-size: 1em
     line-height: 1.62em
 
+h1
+  font-size: 1.5em
+  margin: 1em 0
+
+h2
+  font-size: 1.333em
+  margin: 1em 0
+
+h3
+  font-size: 1.167em
+  margin: 1em 0
+
+h4
+  font-size: 1em
+  margin: 1em 0
+
+h5
+  font-size: 0.833em
+  margin: 1em 0
+
 .body_wrapper
   +clearfix
-  width: 100%
+  padding: 1em
 
 table
-  border: 1px solid #999
+  border: 1px solid #211426
   border-collapse: collapse
   width: 100%
 
   thead
-    font-size: 10px
+    font-size: 0.833em
 
   tr
     td, th
-      border: 1px solid #999
+      border: 1px solid #211426
       text-align: center
+      padding: 0.5em 0.2em
+
+
+a
+  color: #01336b
+
+  &:hover
+    color: #0253ae
+    text-decoration: none
+
+  &:active
+    color: #026be1
+
+form
+  +clearfix
+
+  div.input
+    +clearfix
+    height: 30px
+    line-height: 30px
+
+    label
+      color: #3e2647
+      float: left
+      height: 30px
+      line-height: 30px
+      margin: 0 10px 0 0
+      text-align: right
+      width: 200px
+
+
+  div.string
+    input
+      border: 1px solid #211426
+      font-size: 1.3em
+      height: 22px
+      line-height: 22px
+      margin: 4px 0
+      padding: 0 5px
+      width: 600px
+
+  div.select
+    select
+      font-size: 1.3em
+      padding: 0 5px
+
+  div.check_boxes
+    +clearfix
+
+    .checkbox
+      color: #211426
+      float: left
+      width: 305px
+
+      input
+
+  div.actions
+    margin: 10px 0 0 0
+
+    input
+      font-size: 2em
+      margin: 0 15px 0 0
 

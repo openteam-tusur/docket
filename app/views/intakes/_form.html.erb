@@ -6,5 +6,8 @@
   <%= f.fields_for :specializations %>
   <%= f.link_to_add 'добавить профиль', :specializations %>
 
-  <%= f.submit %>
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to "Отмена", :back %>
+  </div>
 <% end %>

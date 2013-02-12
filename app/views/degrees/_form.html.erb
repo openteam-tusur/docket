@@ -1,0 +1,11 @@
+<%= simple_form_for @degree do |f| %>
+  <%= f.input :title %>
+  <%= f.input :code %>
+  <%= f.input :duration %>
+  <%= f.association :entrance_exams, :as => :check_boxes %>
+
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to "Отмена", :back %>
+  </div>
+<% end %>

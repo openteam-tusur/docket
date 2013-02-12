@@ -1,21 +1,22 @@
+<h1>Проект набора 2013 года</h1>
 <div class="list">
   <table>
     <thead>
       <tr>
-        <th>Код направления</th>
-        <th>Название направления</th>
-        <th>Отрасль</th>
-        <th>Код квалификации</th>
-        <th>Квалификация</th>
-        <th>Срок обучения</th>
-        <th>Вступительные испытания</th>
-        <th>Форма обучения</th>
-        <th>Кол-во бюджетных мест</th>
-        <th>Стоимость обучения</th>
-        <th>Профилирующая кафедра</th>
-        <th>Название профиля</th>
-        <th>Конкурс прошлого года</th>
-        <th>Проходной балл прошлого года</th>
+        <th><%= Stream.human_attribute_name(:code) %></th>
+        <th><%= Stream.human_attribute_name(:title) %></th>
+        <th><%= Stream.human_attribute_name(:sector_id) %></th>
+        <th><%= Degree.human_attribute_name(:code) %></th>
+        <th><%= Degree.human_attribute_name(:title) %></th>
+        <th><%= Degree.human_attribute_name(:duration) %></th>
+        <th><%= Degree.human_attribute_name(:entrance_exams) %></th>
+        <th><%= Intake.human_attribute_name(:tuition) %></th>
+        <th><%= Intake.human_attribute_name(:budget) %></th>
+        <th><%= Intake.human_attribute_name(:price) %></th>
+        <th><%= Specialization.human_attribute_name(:department) %></th>
+        <th><%= Specialization.human_attribute_name(:title) %></th>
+        <th><%= Specialization.human_attribute_name(:density) %></th>
+        <th><%= Specialization.human_attribute_name(:passing_grade) %></th>
       </tr>
     </thead>
     <tbody>

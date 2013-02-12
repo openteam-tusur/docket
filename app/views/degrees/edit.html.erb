@@ -1,15 +1,2 @@
-<div class='degree'>
-  <%= @degree %>
-</div>
-
-<div class='degree_attributes'>
-  <%= simple_form_for @degree do |f| %>
-    <%= f.input :title %>
-    <%= f.input :code %>
-    <%= f.input :duration %>
-
-    <h4>Вступительные экзамены</h4>
-    <%= f.association :entrance_exams, :as => :check_boxes, :label => false %>
-    <%= f.submit 'Сохранить' %>
-  <% end %>
-</div>
+<h1>Редактирование квалификации для направления &laquo;<%= @degree.stream %>, <%= @degree.stream.plan_year %> года&raquo;</h1>
+<%= render 'form' %>

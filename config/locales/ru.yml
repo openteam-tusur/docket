@@ -2,20 +2,49 @@ ru:
   activerecord:
     attributes:
       degree:
-        code:                 Код
-        title:                Название
+        code:                 Код квалификации
         duration:             Срок обучения
+        entrance_exams:       Вступительные испытания
+        title:                Название квалификации
+
+      department:
+        abbr:                 Аббревиатура кафедры
+        title:                Название кафедры
+
+      entrance_exam:
+        title:                Название
 
       intake:
         budget:               Количество бюджет мест
         price:                Стоимость обучения
         tuition:              Форма обучения
 
+      plan:
+        year:                 Год
+
+      sector:
+        title:                Название отрасли
+
       specialization:
-        title:                Название
-        density:              Количество человек на место
-        passing_grade:        Проходной балл
-        department_id:        Кафедра
+        density:              Конкурс прошлого года
+        department:           Кафедра
+        passing_grade:        Проходной балл прошлого года
+        title:                Название профиля
+
+      stream:
+        code:                 Код направления
+        sector_id:            Отрасль
+        title:                Название направления
+
+    models:
+      degree:                 Квалификация
+      department:             Профилирующая кафедра
+      entrance_exam:          Вступительные экзамены
+      intake:                 Планирумый набор
+      plan:                   Проект набора
+      sector:                 Отрасль
+      specialization:         Профиль
+      stream:                 Направление
 
   enumerize:
     degree:
