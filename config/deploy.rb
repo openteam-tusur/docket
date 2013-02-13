@@ -9,7 +9,8 @@ namespace :deploy do
   desc "Copy config files"
   task :config_app, :roles => :app do
     run "ln -s #{deploy_to}/shared/config/settings.yml #{release_path}/config/settings.yml"
-    run "ln -s #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+    run "ln -s #{deploy_to}/shared/config/settings.yml #{release_path}/config/settings.yml"
+    run "ln -s #{deploy_to}/shared/config/sunspot.yml #{release_path}/config/sunspot.yml"
   end
 
   desc "HASK copy right unicorn.rb file"
