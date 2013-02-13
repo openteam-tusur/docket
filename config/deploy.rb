@@ -2,7 +2,6 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 
 load "config/deploy/settings"
-load "config/deploy/assets"
 load "config/deploy/database"
 
 namespace :deploy do
