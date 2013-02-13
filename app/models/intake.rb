@@ -30,13 +30,10 @@ class Intake < ActiveRecord::Base
 
   def self.search_options
     {
-      :search_options =>
-      {
-        :tuition => tuition.values.map(&:text),
-        :exams   => EntranceExam.pluck(:title).uniq,
-        :sector  => Sector.pluck(:title).uniq,
-        :degree  => Degree.pluck(:code).uniq
-      }
+      :tuition => tuition.values.map(&:text),
+      :exams   => EntranceExam.pluck(:title).uniq,
+      :sector  => Sector.pluck(:title).uniq,
+      :degree  => Degree.pluck(:code).uniq
     }
   end
 
