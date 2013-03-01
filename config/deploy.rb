@@ -12,7 +12,7 @@ namespace :deploy do
     run "ln -s #{deploy_to}/shared/config/sunspot.yml #{release_path}/config/sunspot.yml"
   end
 
-  desc "HASK copy right unicorn.rb file"
+  desc "Copy unicorn.rb file"
   task :copy_unicorn_config do
     run "ln -s #{deploy_to}/shared/config/unicorn.rb #{deploy_to}/current/config/unicorn.rb"
   end

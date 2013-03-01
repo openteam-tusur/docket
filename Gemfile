@@ -19,13 +19,14 @@ group :default do
   gem 'nested_form'
   gem 'pg'
   gem 'progress_bar'
-  gem 'rails', '3.2.11'
+  gem 'rails', '~> 3.2.12'
   gem 'simple_form'
   gem 'sqlite3'
   gem 'sunspot_rails'
 end
 
 group :development do
+  gem 'brakeman'
   gem 'hirb'
   gem 'rails-erd'
   gem 'rvm-capistrano'
