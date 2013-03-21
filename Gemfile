@@ -19,7 +19,7 @@ group :default do
   gem 'nested_form'
   gem 'pg'
   gem 'progress_bar'
-  gem 'rails', '~> 3.2.12'
+  gem 'rails',         '~> 3.2.13'
   gem 'simple_form'
   gem 'sqlite3'
   gem 'sunspot_rails'
