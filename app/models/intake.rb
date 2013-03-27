@@ -22,18 +22,18 @@ class Intake < ActiveRecord::Base
   delegate :sector_title, :to => :degree
 
   searchable do
-    string :degree_code
+    string :degree_code,           :multiple => true
     string :entrance_exams_titles, :multiple => true
     string :sector_title
-    string :tuition, :multiple => true
+    string :tuition,               :multiple => true
   end
 
   def self.search_options
     {
-      :tuition => tuition.values.map(&:text),
-      :exams   => EntranceExam.pluck(:title).uniq,
-      :sector  => Sector.pluck(:title).uniq,
-      :degree  => Degree.pluck(:code).uniq
+      :tuitions  => tuition.options,
+      :exams     => EntranceExam.pluck(:title).uniq,
+      :sectors   => Sector.pluck(:title).uniq,
+      :degrees   => Degree.pluck(:code).uniq
     }
   end
 
@@ -45,10 +45,10 @@ class Intake < ActiveRecord::Base
         :specializations,
         :stream
       ]){
-      with :degree_code,           params[:degree]
-      with :entrance_exams_titles, params[:exams]   if params[:exams]
-      with :sector_title,          params[:sector]  if params[:sector]
-      with :tuition,               params[:tuition] if params[:tuition]
+      with :degree_code,           params[:degrees]
+      with :entrance_exams_titles, params[:exams]    if params[:exams] && params[:exams].present?
+      with :sector_title,          params[:sector]   if params[:sector] && params[:sector].present?
+      with :tuition,               params[:tuitions] if params[:tuitions] && params[:tuitions].present?
     }.results
   end
 
