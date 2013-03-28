@@ -4,7 +4,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -27,9 +26,11 @@ end
 
 group :development do
   gem 'brakeman'
+  gem 'capistrano-db-tasks', :git => 'git://github.com/openteam/capistrano-db-tasks'
+  gem 'capistrano-unicorn',  :git => 'git://github.com/sosedoff/capistrano-unicorn'
   gem 'hirb'
+  gem 'openteam-capistrano'
   gem 'rails-erd'
-  gem 'rvm-capistrano'
   gem 'sunspot_solr'
 end
 
