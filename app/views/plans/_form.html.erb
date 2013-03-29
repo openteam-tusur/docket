@@ -1,6 +1,8 @@
 <%= simple_form_for @plan do |f| %>
   <%= f.input :year %>
 
-  <%= f.submit 'Сохранить' %>
-  <%= link_to "Отмена", :back %>
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to "Отмена", :back %>
+  </div>
 <% end %>

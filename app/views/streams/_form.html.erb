@@ -6,6 +6,8 @@
   <%= f.fields_for :degrees %>
   <%= f.link_to_add 'добавить квалификацию', :degrees %>
 
-  <%= f.submit 'Сохранить' %>
-  <%= link_to "Отмена", :back %>
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to "Отмена", :back %>
+  </div>
 <% end %>
