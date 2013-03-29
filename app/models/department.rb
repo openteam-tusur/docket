@@ -1,9 +1,10 @@
 class Department < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :title, :abbr
 
-  belongs_to :plan
+  belongs_to :faculty
 
   has_many :specializations
 
-  scope :ordered_by_title, -> { order :title }
+  validates_presence_of :title, :abbr
+  validates_uniqueness_of :title, :abbr, :scope => :faculty_id
 end

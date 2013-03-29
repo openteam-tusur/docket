@@ -1,13 +1,22 @@
 class IntakesController < InheritedResources::Base
-  actions :new, :create, :edit, :update
-  belongs_to :degree
+  actions :new, :create, :edit, :update, :destroy
+
+  belongs_to :plan do
+    belongs_to :stream do
+      belongs_to :degree
+    end
+  end
 
   def create
-    create! { streams_path }
+    create! { plan_path(@plan) }
   end
 
   def update
-    update! { streams_path }
+    update! { plan_path(@plan) }
+  end
+
+  def destroy
+    destroy! { plan_path(@plan) }
   end
 end
 

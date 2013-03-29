@@ -1,0 +1,13 @@
+<h1>Список планов набора</h1>
+
+<%= link_to "Новый план набора", new_resource_path %>
+
+<ul>
+  <% @plans.each do |plan| %>
+    <li>
+      <%= link_to "План набора #{plan.year} года", plan %>
+      <%= link_to 'редактировать', edit_plan_path(plan) %>
+      <%= link_to 'удалить', plan, :method => :delete, :confirm => 'Вы уверены?' %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,15 @@
+<%= link_to "назад", plan_path(@plan) %>
+
+<h1>Список отраслей</h1>
+<%= link_to "добавить отрасль", new_plan_sector_path(@plan) %>
+
+<ul>
+  <% @sectors.each do |sector| %>
+    <li>
+      <%= sector.title %>
+      <%= link_to 'редактировать', edit_plan_sector_path(@plan, sector) %>
+      <%= link_to 'удалить', plan_sector_path(@plan, sector), :method => :delete, :confirm => 'Вы уверены?' %>
+    </li>
+  <% end %>
+</ul>
+

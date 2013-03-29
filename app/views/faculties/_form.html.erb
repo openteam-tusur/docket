@@ -1,0 +1,12 @@
+<%= simple_nested_form_for [@plan, @faculty] do |f| %>
+  <%= f.input :abbr %>
+  <%= f.input :title %>
+
+  <%= f.fields_for :departments %>
+  <%= f.link_to_add 'добавить кафедру', :departments %>
+
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+    <%= link_to "Отмена", :back %>
+  </div>
+<% end %>

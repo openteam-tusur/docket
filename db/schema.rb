@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130201043122) do
+ActiveRecord::Schema.define(:version => 20130329082811) do
 
   create_table "degrees", :force => true do |t|
     t.string   "code"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130201043122) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "abbr"
-    t.integer  "plan_id"
+    t.integer  "faculty_id"
   end
 
   create_table "entrance_exams", :force => true do |t|
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20130201043122) do
     t.datetime "updated_at", :null => false
     t.integer  "plan_id"
   end
+
+  create_table "faculties", :force => true do |t|
+    t.string   "abbr"
+    t.string   "title"
+    t.integer  "plan_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "faculties", ["plan_id"], :name => "index_faculties_on_plan_id"
 
   create_table "intakes", :force => true do |t|
     t.string   "tuition"

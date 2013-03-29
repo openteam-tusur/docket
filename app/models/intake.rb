@@ -14,7 +14,8 @@ class Intake < ActiveRecord::Base
 
   accepts_nested_attributes_for :specializations, :allow_destroy => true
 
-  validates_uniqueness_of :tuition, :scope => :degree_id
+  validates_presence_of :budget, :price, :tuition
+  validates_uniqueness_of :tuition, :scope => [:degree_id]
 
   enumerize :tuition, in: [:fulltime, :extramural, :evening], default: :fulltime
 

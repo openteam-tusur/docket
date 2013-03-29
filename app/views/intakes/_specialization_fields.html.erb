@@ -1,6 +1,6 @@
   <%= f.input :title %>
   <%= f.input :density %>
   <%= f.input :passing_grade %>
-  <%= f.association :department %>
+  <%= f.association :department, :collection => @plan.faculties, :as => :grouped_select, :group_method => :departments %>
 
   <%= f.link_to_remove 'удалить' %>

@@ -1,0 +1,6 @@
+  <%= f.input :code %>
+  <%= f.input :duration %>
+  <%= f.input :title %>
+  <%= f.association :entrance_exams, :as => :check_boxes, :collection => @plan.entrance_exams %>
+
+  <%= f.link_to_remove 'удалить' %>
