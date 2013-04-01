@@ -1,5 +1,5 @@
-  <%= f.input :code %>
-  <%= f.input :duration %>
+  <%= f.input :code, :include_blank => '- не выбрано -' %>
+  <%= f.input :duration, :include_blank => '- не выбрано -' %>
   <%= f.input :title %>
   <%= f.association :entrance_exams, :as => :check_boxes, :collection => @plan.entrance_exams %>
 

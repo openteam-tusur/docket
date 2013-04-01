@@ -22,8 +22,12 @@ class Plan < ActiveRecord::Base
         self.sectors.create :title => sector.title
       end
 
-      prev_plan.departments.each do |department|
-        self.departments.create :title => department.title, :abbr => department.abbr
+      prev_plan.faculties.each do |faculty|
+        f = self.faculties.create(:title => faculty.title, :abbr => faculty.abbr)
+
+        faculty.departments.each do |department|
+          f.departments.create :title => department.title, :abbr => department.abbr
+        end
       end
 
       prev_plan.entrance_exams.each do |entrance_exam|

@@ -14,6 +14,10 @@ ru:
       entrance_exam:
         title:                Название
 
+      faculty:
+        abbr:                 Аббревиатура факультета
+        title:                Название факультета
+
       intake:
         budget:               Количество бюджет мест
         price:                Стоимость обучения
@@ -33,7 +37,7 @@ ru:
 
       stream:
         code:                 Код направления
-        sector_id:            Отрасль
+        sector:               Отрасль
         title:                Название направления
 
     models:

@@ -1,14 +1,21 @@
-<%= link_to "назад", plan_path(@plan) %>
+<%= content_for :title, "Список факультетов" %>
 
-<h1>Список факультетов</h1>
-<%= link_to "добавить факультет", new_plan_faculty_path(@plan) %>
+<% if @faculties.any? %>
+  <div class='list'>
+    <ul>
+      <% @faculties.each do |faculty| %>
+        <li>
+          <span class='item'><%= faculty.title %></span>
+          <div class="actions">
+            <%= link_to 'редактировать', edit_plan_faculty_path(@plan, faculty) %>
+            <%= link_to 'удалить', plan_faculty_path(@plan, faculty), :method => :delete, :confirm => 'Вы уверены?' %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="empty">Нет ни одного факультета</div>
+<% end %>
 
-<ul>
-  <% @faculties.each do |faculty| %>
-    <li>
-      <%= faculty.title %>
-      <%= link_to 'редактировать', edit_plan_faculty_path(@plan, faculty) %>
-      <%= link_to 'удалить', plan_faculty_path(@plan, faculty), :method => :delete, :confirm => 'Вы уверены?' %>
-    </li>
-  <% end %>
-</ul>
+<%= link_to "Добавить факультет", new_plan_faculty_path(@plan), :class => 'button' %>

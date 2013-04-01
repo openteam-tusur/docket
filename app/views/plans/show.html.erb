@@ -1,15 +1,4 @@
-<h1>План набора <%= @plan.year %> года</h1>
-
-<div class="navigation">
-  <ul>
-    <li><%= link_to "Факультеты", plan_faculties_path(@plan) %></li>
-    <li><%= link_to "Отрасли", plan_sectors_path(@plan) %></li>
-    <li><%= link_to "Экзамены", plan_entrance_exams_path(@plan) %></li>
-  </ul>
-</div>
-
-
-<%= link_to 'Добавить направление', new_plan_stream_path(@plan) %>
+<%= content_for :title, "План набора #{@plan.year} года" %>
 
 <div class="list">
   <table>
@@ -36,3 +25,5 @@
     </tbody>
   </table>
 </div>
+
+<%= link_to 'Добавить направление', new_plan_stream_path(@plan), :class => 'button' %>

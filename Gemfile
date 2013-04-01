@@ -19,7 +19,9 @@ group :default do
   gem 'pg'
   gem 'progress_bar'
   gem 'rails',         '~> 3.2.13'
+  gem 'russian'
   gem 'simple_form'
+  gem 'simple-navigation'
   gem 'sqlite3'
   gem 'sunspot_rails'
 end

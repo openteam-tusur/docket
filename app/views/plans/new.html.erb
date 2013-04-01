@@ -1,3 +1,4 @@
-<h1>Добавление плана набора</h1>
+<%= content_for :title, "Добавление плана набора" %>
+<% @plan.year = Date.today.year.next %>
 <%= render 'form' %>
 

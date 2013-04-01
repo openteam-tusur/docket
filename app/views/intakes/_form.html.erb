@@ -1,13 +1,13 @@
 <%= simple_nested_form_for [@plan, @stream, @degree, @intake] do |f| %>
   <%= f.input :budget %>
   <%= f.input :price %>
-  <%= f.input :tuition %>
+  <%= f.input :tuition, :include_blank => '- не выбрано -' %>
 
   <%= f.fields_for :specializations %>
   <%= f.link_to_add 'добавить профиль', :specializations %>
 
   <div class="actions">
-    <%= f.submit 'Сохранить' %>
-    <%= link_to "Отмена", :back %>
+    <%= f.submit 'Сохранить', :class => 'button' %>
+    <%= link_to "Отмена", :back, :class => 'button' %>
   </div>
 <% end %>

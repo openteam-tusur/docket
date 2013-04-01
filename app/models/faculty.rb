@@ -1,5 +1,5 @@
 class Faculty < ActiveRecord::Base
-  attr_accessible :abbr, :title
+  attr_accessible :abbr, :title, :departments_attributes
 
   belongs_to :plan
 

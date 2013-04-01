@@ -1,13 +1,19 @@
-<h1>Список планов набора</h1>
+<%= content_for :title, "Список планов набора" %>
 
-<%= link_to "Новый план набора", new_resource_path %>
+<% if @plans.any? %>
+  <ul class='list'>
+    <% @plans.each do |plan| %>
+      <li>
+        <%= link_to "План набора #{plan.year} года", plan, :class => 'item' %>
+        <div class="actions">
+          <%= link_to 'редактировать', edit_plan_path(plan) %>
+          <%= link_to 'удалить', plan, :method => :delete, :confirm => 'Вы уверены?' %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="empty">Нет ни одно палана набора</div>
+<% end %>
 
-<ul>
-  <% @plans.each do |plan| %>
-    <li>
-      <%= link_to "План набора #{plan.year} года", plan %>
-      <%= link_to 'редактировать', edit_plan_path(plan) %>
-      <%= link_to 'удалить', plan, :method => :delete, :confirm => 'Вы уверены?' %>
-    </li>
-  <% end %>
-</ul>
+<%= link_to "Добавить план набора", new_resource_path, :class => 'button' %>

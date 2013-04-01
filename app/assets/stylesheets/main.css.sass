@@ -3,38 +3,112 @@
 @import 'compass/css3'
 
 html
-  background: #fefefe
+  background: #fefefe url('light_noise_diagonal.png')
   font-size: 12px
   color: #211426
 
   body
+    color: #444
     font-family: 'Helvetica', 'Charcoal', 'Trebuchet MS', sans-serif
     font-size: 1em
     line-height: 1.62em
 
 h1
-  font-size: 1.5em
+  font-size: 2em
+  line-height: 1.2em
   margin: 1em 0
+  text-align: center
 
 h2
-  font-size: 1.333em
+  font-size: 1.8em
+  line-height: 1.2em
   margin: 1em 0
 
 h3
-  font-size: 1.167em
+  font-size: 1.6em
+  line-height: 1.2em
   margin: 1em 0
 
 h4
-  font-size: 1em
+  font-size: 1.4em
+  line-height: 1.2em
   margin: 1em 0
 
 h5
-  font-size: 0.833em
+  font-size: 1.2em
+  line-height: 1.2em
   margin: 1em 0
 
 .body_wrapper
   +clearfix
   padding: 1em
+
+.empty
+  border-bottom: 1px solid #888
+  font-size: 16px
+  margin: 15px 0
+  padding: 15px 0
+  text-align: center
+
+
+.navigation
+  +border-radius(4px)
+  +single-box-shadow(#bbb, 0, 5px, 5px, -3px)
+  +background-image(linear-gradient(#fff, #bbb))
+  border: 1px solid #888
+  font-size: 16px
+  padding: 10px 20px
+
+.sub_navigation
+  +clearfix
+  +background-image(linear-gradient(#fff, #eee))
+  +border-bottom-left-radius(4px)
+  +border-bottom-right-radius(4px)
+  +single-box-shadow(#bbb, 0, 5px, 5px, -3px)
+  border-top: none
+  border: 1px solid #888
+  font-size: 12px
+  margin: 0 auto
+  padding: 5px 20px
+  width: 350px
+
+  ul
+    text-align: center
+
+.navigation, .sub_navigation
+  ul
+    +clearfix
+
+    li
+      +inline-block
+      margin: 0 15px 0 0
+
+      ul
+        margin: 10px 0 0 0
+
+      &.selected
+
+        a.selected
+          text-decoration: none
+
+          &:after
+            +inline-block
+            content: '\2193'
+            margin: 0 0 0 5px
+            text-decoration: none
+
+        .selected
+          a
+            &:after
+              content: ''
+
+.breadcrumbs
+  border-bottom: 1px solid #888
+  margin: 10px 0 0
+  padding: 5px
+
+  a, span
+    margin: 0 5px
 
 table
   border: 1px solid #211426
@@ -61,11 +135,52 @@ a
   &:active
     color: #026be1
 
+.button
+  +border-radius(4px)
+  +single-box-shadow(#bbb, 0, 5px, 5px, -3px)
+  +background-image(linear-gradient(#fff, #bbb))
+  +inline-block
+  border: 1px solid #888
+  color: #444
+  font-size: 12px !important
+  line-height: 14px
+  margin: 5px 10px 5px 0 !important
+  padding: 6px 12px
+  text-decoration: none
+
+  &:hover
+    +single-box-shadow(#aaa, 0, 5px, 5px, -3px)
+    border-color: #666
+    color: #222
+    cursor: pointer
+
+  &:active
+    +background-image(linear-gradient(#bbb, #fff))
+    +single-box-shadow(#bbb, 0, -2px, 2px, -2px)
+    color: #444
+    position: relative
+    margin: 6px 10px 4px 0
+    top: 1px
+    left: 1px
+
 form
   +clearfix
+  margin: 15px 0
+
+  .error
+    color: #F73B3E
+    margin: 0 0 0 15px
 
   div.fields
     +clearfix
+    border-top: 1px solid #888
+    margin: 15px 0
+    padding: 15px 0
+
+  a
+    display: block
+    font-size: 16px
+    margin: 10px 0
 
   div.input
     +clearfix
@@ -74,15 +189,13 @@ form
 
     label
       color: #3e2647
-      float: left
+      display: block
+      font-size: 16px
       height: 30px
       line-height: 30px
       margin: 0 10px 0 0
-      text-align: right
-      width: 200px
 
-
-  div.string
+  div.string, div.integer, div.float
     input
       border: 1px solid #211426
       font-size: 1.3em
@@ -92,10 +205,11 @@ form
       padding: 0 5px
       width: 600px
 
-  div.select
+  div.select, div.grouped_select
     select
       font-size: 1.3em
       padding: 0 5px
+      width: 600px
 
   div.check_boxes
     +clearfix
@@ -119,3 +233,24 @@ form
       font-size: 2em
       margin: 0 15px 0 0
 
+.list
+  border-bottom: 1px solid #888
+  margin: 15px 0
+  padding: 0 0 10px
+
+  li
+    +clearfix
+    margin: 5px 0
+    padding: 3px 4px
+
+    .item
+      font-size: 16px
+
+    .actions
+      float: right
+
+      a
+        margin: 0 5px
+
+    &:hover
+      background: rgba(210, 231, 255, 0.3)

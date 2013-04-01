@@ -1,15 +1,21 @@
-<%= link_to "назад", plan_path(@plan) %>
+<%= content_for :title, "Список вступительных испытаний" %>
 
-<h1>Список экзаменов</h1>
-<%= link_to "добавить экзамен", new_plan_entrance_exam_path(@plan) %>
+<% if @entrance_exams.any? %>
+  <div class='list'>
+    <ul>
+      <% @entrance_exams.each do |entrance_exam| %>
+        <li>
+          <span class='item'><%= entrance_exam.title %></span>
+          <div class="actions">
+            <%= link_to 'редактировать', edit_plan_entrance_exam_path(@plan, entrance_exam) %>
+            <%= link_to 'удалить', plan_entrance_exam_path(@plan, entrance_exam), :method => :delete, :confirm => 'Вы уверены?' %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="empty">Нет ни одного вступительного испытания</div>
+<% end %>
 
-<ul>
-  <% @entrance_exams.each do |entrance_exam| %>
-    <li>
-      <%= entrance_exam.title %>
-      <%= link_to 'редактировать', edit_plan_entrance_exam_path(@plan, entrance_exam) %>
-      <%= link_to 'удалить', plan_entrance_exam_path(@plan, entrance_exam), :method => :delete, :confirm => 'Вы уверены?' %>
-    </li>
-  <% end %>
-</ul>
-
+<%= link_to "Добавить вступительное испытание", new_plan_entrance_exam_path(@plan), :class => 'button' %>
