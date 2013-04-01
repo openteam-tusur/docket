@@ -1,5 +1,5 @@
 <%= simple_form_for @plan do |f| %>
-  <%= f.input :year %>
+  <%= f.input :year, :wrapper_html => { :class => 'min_width' } %>
 
   <div class="actions">
     <%= f.submit 'Сохранить', :class => 'button' %>

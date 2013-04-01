@@ -1,5 +1,5 @@
 <%= simple_form_for [@plan, @sector] do |f| %>
-  <%= f.input :title %>
+  <%= f.input :title, :wrapper_html => { :class => 'normal_width' } %>
 
   <div class="actions">
     <%= f.submit 'Сохранить', :class => 'button' %>

@@ -1,7 +1,7 @@
 <%= simple_nested_form_for [@plan, @stream] do |f| %>
-  <%= f.input :code %>
-  <%= f.input :title %>
-  <%= f.association :sector, :collection => @plan.sectors, :include_blank => '- не выбрано -' %>
+  <%= f.input :code, :wrapper_html => { :class => 'min_width' } %>
+  <%= f.input :title, :wrapper_html => { :class => 'max_width' } %>
+  <%= f.association :sector, :collection => @plan.sectors, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'normal_width' } %>
 
   <%= f.fields_for :degrees %>
   <%= f.link_to_add 'добавить квалификацию', :degrees %>

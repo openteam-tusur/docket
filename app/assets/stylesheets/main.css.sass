@@ -8,6 +8,7 @@ html
   color: #211426
 
   body
+    +min-width(900px)
     color: #444
     font-family: 'Helvetica', 'Charcoal', 'Trebuchet MS', sans-serif
     font-size: 1em
@@ -232,6 +233,18 @@ form
     input
       font-size: 2em
       margin: 0 15px 0 0
+
+  .min_width
+    input, select
+      width: 80px !important
+
+  .normal_width
+    input, select
+      width: 300px !important
+
+  .max_width
+    input, select
+      width: 800px !important
 
 .list
   border-bottom: 1px solid #888

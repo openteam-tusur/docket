@@ -1,6 +1,6 @@
-  <%= f.input :code, :include_blank => '- не выбрано -' %>
-  <%= f.input :duration, :include_blank => '- не выбрано -' %>
-  <%= f.input :title %>
+  <%= f.input :code, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'min_width' } %>
+  <%= f.input :duration, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'min_width' } %>
+  <%= f.input :title, :wrapper_html => { :class => 'max_width' } %>
   <%= f.association :entrance_exams, :as => :check_boxes, :collection => @plan.entrance_exams %>
 
   <%= f.link_to_remove 'удалить' %>
