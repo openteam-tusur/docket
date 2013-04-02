@@ -1,19 +1,21 @@
 # encoding: utf-8
 
+require 'csv'
+
 def plan
   Plan.find_or_create_by_year('2013')
 end
 
 def import_departments
   puts 'Импорт кафедр ▼'
-  array = YAML.load_file(Rails.root.join('data', 'departments.yml')).map { |e| e['subdepartments'] }
-  bar = ProgressBar.new(array.flatten!.count)
+  array = YAML.load_file(Rails.root.join('data', 'departments.yml'))
+  bar = ProgressBar.new(array.count)
 
-  array.each do |department_attributes|
-    abbr, title = department_attributes['abbr'], department_attributes['title']
-
-    department = plan.departments.find_or_initialize_by_abbr(abbr)
-    department.update_attributes title: title
+  array.each do |faculty_attributes|
+    faculty = plan.faculties.find_or_create_by_abbr_and_title :abbr => faculty_attributes['abbr'], :title => faculty_attributes['title']
+    faculty_attributes['subdepartments'].each do |subdepartment_attributes|
+      faculty.departments.find_or_create_by_abbr_and_title :abbr => subdepartment_attributes['abbr'], :title => subdepartment_attributes['title']
+    end
     bar.increment!
   end
 end
@@ -38,12 +40,20 @@ def import_sectors
   end
 end
 
+def prepared_hash
+  csv_data = CSV.read(Rails.root.join('data/streams.csv'), :col_sep => ';', :converters => [->(f){ f.strip if f}])
+  headers = csv_data.shift.map {|i| i.to_s }
+  string_data = csv_data.map {|row| row.map {|cell| cell.to_s } }
+  string_data.map {|row| Hash[*headers.zip(row).flatten] }
+end
+
 def import_streams
   puts 'Импорт направлений подготовки ▼'
-  array = YAML.load_file(Rails.root.join('data', 'licences.yml'))
-  bar = ProgressBar.new(array['2012'].count)
-  array['2012'].each do |element|
-    case element['degree']['duration']
+  bar = ProgressBar.new(prepared_hash.size)
+  prepared_hash.each do |record|
+    stream = plan.streams.find_or_create_by_code_and_title(:code => record['code'], :title => record['str_title'], :sector_id => 1 )
+
+    case record['duration']
     when '2'
       duration = :two_years
     when '4'
@@ -55,10 +65,24 @@ def import_streams
     when '6'
       duration = :six_years
     else
-      p element['degree']
+      p record['degree']
     end
-    stream = plan.streams.find_or_create_by_code_and_title(element['code'], element['title'])
-    stream.degrees.find_or_create_by_title_and_code_and_duration(element['degree']['title'], element['degree']['code'], duration)
+
+    case record['degree']
+    when '62'
+      title = 'Бакалавр'
+    when '65'
+     title = 'Специалист'
+    else
+      p record['degree']
+    end
+
+    degree = stream.degrees.find_or_create_by_code_and_duration_and_title(:code => record['degree'], :duration => duration, :title => title, :entrance_exam_ids => plan.entrance_exams.where(:title => record['exams'].split(', ')).map(&:id) )
+
+    intake = degree.intakes.find_or_create_by_budget_and_price_and_tuituion(:budget => 0, :price => 0, :tuition => :fulltime)
+
+    specialization = intake.specializations.find_or_create_by_density_and_passing_grade_and_title(:density => 0, :passing_grade => 0, :title => record['prf_title'], :department_id => Department.find_by_abbr(record['dep']).id)
+
     bar.increment!
   end
 end
@@ -66,5 +90,5 @@ end
 ###############################################################################
 import_departments
 import_entrance_exams
-import_streams
 import_sectors
+import_streams
