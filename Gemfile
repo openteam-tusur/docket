@@ -37,6 +37,6 @@ group :development do
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '~> 4.6'
 end
 
