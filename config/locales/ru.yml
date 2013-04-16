@@ -19,7 +19,6 @@ ru:
         title:                Название факультета
 
       intake:
-        budget:               Количество бюджет мест
         price:                Стоимость обучения
         tuition:              Форма обучения
 
@@ -30,9 +29,11 @@ ru:
         title:                Название отрасли
 
       specialization:
+        budget:               Количество бюджетных мест
         density:              Конкурс прошлого года
         department:           Кафедра
         passing_grade:        Проходной балл прошлого года
+        pay_budget:           Количество платных мест
         title:                Название профиля
 
       stream:
@@ -52,9 +53,10 @@ ru:
 
   enumerize:
     degree:
-      bachelor:               Бакалавриат
-      magistracy:             Магистратура
-      specialty:              Специалитет
+      code:
+        '62':               Бакалавриат
+        '65':               Магистратура
+        '68':               Специалитет
 
     duration:
       two_years:              2 года
@@ -67,3 +69,4 @@ ru:
       fulltime:               Очная
       extramural:             Заочная
       evening:                Очно-заочная
+      remote:                 Заочная с дистанционной технологией

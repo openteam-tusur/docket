@@ -25,12 +25,15 @@
         <%= link_to 'Удалить набор', plan_stream_degree_intake_path(@plan, stream, degree, intake), :method => :delete, :confirm => 'Вы уверены?' %>
       </td>
       <td rowspan=<%= intake.specializations.count+1 %>><%= intake.budget %></td>
+      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.pay_budget %></td>
       <td rowspan=<%= intake.specializations.count+1 %>><%= intake.price %></td>
     </tr>
     <% intake.specializations.each do |specialization| %>
       <tr>
         <td><%= specialization.department_abbr %></td>
         <td><%= specialization.title %></td>
+        <td><%= specialization.budget %></td>
+        <td><%= specialization.pay_budget %></td>
         <td><%= specialization.density %></td>
         <td><%= specialization.passing_grade %></td>
       </tr>

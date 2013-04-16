@@ -1,7 +1,7 @@
 class Intake < ActiveRecord::Base
   extend Enumerize
 
-  attr_accessible :budget, :price, :tuition, :year, :specializations_attributes
+  attr_accessible :price, :tuition, :year, :specializations_attributes
 
   belongs_to :degree
   belongs_to :plan
@@ -14,10 +14,10 @@ class Intake < ActiveRecord::Base
 
   accepts_nested_attributes_for :specializations, :allow_destroy => true
 
-  validates_presence_of :budget, :price, :tuition
+  validates_presence_of :price, :tuition
   validates_uniqueness_of :tuition, :scope => [:degree_id]
 
-  enumerize :tuition, in: [:fulltime, :extramural, :evening], default: :fulltime
+  enumerize :tuition, in: [:fulltime, :extramural, :evening, :remote], default: :fulltime
 
   delegate :code, :to => :degree, :prefix => true
   delegate :sector_title, :to => :degree
@@ -51,6 +51,14 @@ class Intake < ActiveRecord::Base
       with :sector_title,          params[:sector]   if params[:sector] && params[:sector].present?
       with :tuition,               params[:tuitions] if params[:tuitions] && params[:tuitions].present?
     }.results
+  end
+
+  def budget
+    specializations.sum(:budget)
+  end
+
+  def pay_budget
+    specializations.sum(:pay_budget)
   end
 
   def entrance_exams_titles

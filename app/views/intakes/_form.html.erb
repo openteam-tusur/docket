@@ -1,5 +1,4 @@
 <%= simple_nested_form_for [@plan, @stream, @degree, @intake] do |f| %>
-  <%= f.input :budget, :wrapper_html => { :class => 'min_width' } %>
   <%= f.input :price, :wrapper_html => { :class => 'min_width' } %>
   <%= f.input :tuition, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'normal_width' } %>
 

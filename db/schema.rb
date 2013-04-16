@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329082811) do
+ActiveRecord::Schema.define(:version => 20130416083910) do
 
   create_table "degrees", :force => true do |t|
     t.string   "code"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20130329082811) do
     t.integer  "intake_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "budget"
+    t.integer  "pay_budget"
   end
 
   add_index "specializations", ["department_id"], :name => "index_specializations_on_department_id"

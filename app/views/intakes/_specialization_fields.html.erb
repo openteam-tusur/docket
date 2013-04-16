@@ -1,4 +1,6 @@
   <%= f.input :title, :wrapper_html => { :class => 'max_width' } %>
+  <%= f.input :budget, :wrapper_html => { :class => 'min_width' } %>
+  <%= f.input :pay_budget, :wrapper_html => { :class => 'min_width' } %>
   <%= f.input :density, :wrapper_html => { :class => 'min_width' } %>
   <%= f.input :passing_grade, :wrapper_html => { :class => 'min_width' } %>
   <%= f.association :department, :collection => @plan.faculties, :as => :grouped_select, :group_method => :departments, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'max_width' } %>
