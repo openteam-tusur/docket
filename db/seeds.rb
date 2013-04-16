@@ -77,7 +77,7 @@ def import_streams
       p record['degree']
     end
 
-    degree = stream.degrees.find_or_create_by_code_and_duration_and_title(:code => record['degree'], :duration => duration, :title => title, :entrance_exam_ids => plan.entrance_exams.where(:title => record['exams'].split(', ')).map(&:id) )
+    degree = stream.degrees.find_or_create_by_code_and_duration_and_title(:code => record['degree'], :duration => duration, :entrance_exam_ids => plan.entrance_exams.where(:title => record['exams'].split(', ')).map(&:id) )
 
     intake = degree.intakes.find_or_create_by_budget_and_price_and_tuituion(:budget => 0, :price => 0, :tuition => :fulltime)
 
