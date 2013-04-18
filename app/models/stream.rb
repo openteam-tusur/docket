@@ -13,8 +13,7 @@ class Stream < ActiveRecord::Base
   delegate :year, :to => :plan, :prefix => true
 
   validates_presence_of :code, :title, :sector_id
-  validates_uniqueness_of :code, :scope => [:title, :sector_id, :plan_id]
-  validates_uniqueness_of :title, :scope => [:code, :sector_id, :plan_id]
+  validates_uniqueness_of :code, :scope => [:plan_id]
 
   after_save :check_intakes
 
