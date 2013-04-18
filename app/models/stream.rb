@@ -16,6 +16,8 @@ class Stream < ActiveRecord::Base
   validates_uniqueness_of :code, :scope => [:title, :sector_id, :plan_id]
   validates_uniqueness_of :title, :scope => [:code, :sector_id, :plan_id]
 
+  after_save :check_intakes
+
   def to_s
     "".tap do |string|
       string << code
@@ -23,4 +25,25 @@ class Stream < ActiveRecord::Base
       string << title
     end.html_safe
   end
+
+  private
+    def check_intakes
+      degrees.each do |degree|
+        old_tuitions = degree.intakes.pluck(:tuition) || []
+        new_tuitions = degree.tuitions.try(:delete_if, &:blank?) || []
+
+        next if old_tuitions == new_tuitions
+
+        if (delta = old_tuitions - new_tuitions).any?
+          degree.intakes.where(:tuition => delta).destroy_all
+        end
+
+        if (delta = new_tuitions - old_tuitions).any?
+          delta.each do |tuition|
+            intake = degree.intakes.new :tuition => tuition
+            intake.save(:validate => false)
+          end
+        end
+      end
+    end
 end

@@ -6,6 +6,7 @@ class Plan < ActiveRecord::Base
   has_many :sectors, :dependent => :destroy
   has_many :streams, :dependent => :destroy
   has_many :intakes, :through => :streams
+  has_many :specializations, :through => :intakes
 
   validates_presence_of :year
   validates_uniqueness_of :year
@@ -41,9 +42,8 @@ class Plan < ActiveRecord::Base
                            :degrees_attributes => stream.degrees.map{|d|
                              {
                                :code => d.code,
-                               :duration => d.duration,
-                               :title => d.title,
-                               :entrance_exam_ids => self.entrance_exams.where(:title => d.entrance_exams.map(&:title)).map(&:id)
+                               :entrance_exam_ids => self.entrance_exams.where(:title => d.entrance_exams.map(&:title)).map(&:id),
+                               :tuitions => d.tuitions
                              }
                            }
       end

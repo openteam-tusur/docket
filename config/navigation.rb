@@ -18,6 +18,14 @@ SimpleNavigation::Configuration.run do |navigation|
         inner.item :new, 'Новое вступительное испытание', new_plan_entrance_exam_path(@plan) if @entrance_exam && @entrance_exam.new_record?
         inner.item :edit, 'Редактирование вступительного испытания', edit_plan_entrance_exam_path(@plan, @entrance_exam) if @entrance_exam && @entrance_exam.persisted?
       end
+
+      sub.item :streams, 'Направления подготовки', plan_streams_path(@plan) do |inner|
+        inner.item :new, 'Новое напавление', new_plan_stream_path(@plan) if @stream && @stream.new_record?
+        inner.item :edit, 'Редактирование направления', edit_plan_stream_path(@plan, @stream) if @stream && @stream.persisted?
+      end
+
+      sub.item :intakes, 'Профили и КЦП', plan_scoped_intakes_path(@plan), :highlights_on => /intake/ do |inner|
+      end
     end if @plan && @plan.persisted?
   end
 end

@@ -1,22 +1,20 @@
 class IntakesController < InheritedResources::Base
-  actions :new, :create, :edit, :update, :destroy
+  actions :index, :edit, :update, :destroy
 
   belongs_to :plan do
-    belongs_to :stream do
-      belongs_to :degree
+    belongs_to :stream, :optional => true do
+      belongs_to :degree, :optional => true
     end
   end
 
-  def create
-    create! { plan_path(@plan) }
-  end
+  has_scope :by_tuition
 
   def update
-    update! { plan_path(@plan) }
+    update! { plan_scoped_intakes_path(@plan, :by_tuition => @intake.tuition) }
   end
 
   def destroy
-    destroy! { plan_path(@plan) }
+    destroy! { plan_scoped_intakes_path(@plan, :by_tuition => @intake.tuition) }
   end
 end
 

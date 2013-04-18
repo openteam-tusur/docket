@@ -1,0 +1,35 @@
+<div class="tuition_tabs">
+  <%= render_navigation :context => :tuitions %>
+</div>
+
+<% if @intakes.any? %>
+  <% @intakes.group_by(&:degree_code).each do |degree_code, intakes| %>
+    <h2><%= Degree.code_values[degree_code] %></h2>
+    <div class='list'>
+      <table>
+        <thead>
+          <tr>
+            <th><%= Stream.human_attribute_name(:code) %></th>
+            <th><%= Stream.human_attribute_name(:title) %></th>
+            <th><%= Intake.human_attribute_name(:tuition) %></th>
+            <th><%= Intake.human_attribute_name(:duration) %></th>
+            <th><%= Specialization.human_attribute_name(:budget) %></th>
+            <th><%= Specialization.human_attribute_name(:pay_budget) %></th>
+            <th><%= Intake.human_attribute_name(:price) %></th>
+            <th><%= Specialization.human_attribute_name(:title) %></th>
+            <th><%= Specialization.human_attribute_name(:department) %></th>
+            <th><%= Specialization.human_attribute_name(:budget) %></th>
+            <th><%= Specialization.human_attribute_name(:pay_budget) %></th>
+            <th><%= Specialization.human_attribute_name(:density) %></th>
+            <th><%= Specialization.human_attribute_name(:passing_grade) %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render intakes.sort %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% else %>
+  <div class="empty">Нет ни одного направления подготовки</div>
+<% end %>

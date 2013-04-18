@@ -1,0 +1,24 @@
+<%= link_to 'Добавить направление', new_plan_stream_path(@plan), :class => 'button' %>
+
+<% if @streams.any? %>
+  <div class="list">
+    <table>
+      <thead>
+        <tr>
+          <th><%= Stream.human_attribute_name(:code) %></th>
+          <th><%= Stream.human_attribute_name(:title) %></th>
+          <th><%= Stream.human_attribute_name(:sector) %></th>
+          <th><%= Degree.human_attribute_name(:code) %></th>
+          <th><%= Degree.human_attribute_name(:title) %></th>
+          <th><%= Degree.human_attribute_name(:entrance_exams) %></th>
+          <th><%= Intake.human_attribute_name(:tuition) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @streams.order(:code) %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="empty">Нет ни одного направления подготовки</div>
+<% end %>

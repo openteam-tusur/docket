@@ -1,42 +1,23 @@
 <tr>
-  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>><%= stream.code %></td>
-  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count %>><%= stream.code %></td>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count %>>
     <%= stream.title %>
     <%= link_to "редактировать", edit_plan_stream_path(@plan, stream) %>
     <%= link_to "удалить", plan_stream_path(@plan, stream), :method => :delete, :confirm => 'Вы уверены?' %>
   </td>
-  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count+stream.degrees.flat_map(&:intakes).flat_map(&:specializations).count %>><%= stream.sector_title %></td>
+  <td rowspan=<%= stream.degrees.count+1+stream.degrees.flat_map(&:intakes).count %>><%= stream.sector_title %></td>
 </tr>
-<% stream.degrees.each do |degree| %>
+<% stream.degrees.order(:code).each do |degree| %>
   <tr>
-    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= "#{stream.code}.#{degree.code}" %></td>
-    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>>
-      <%= degree.title %>
-      <%= link_to 'Добавить набор', new_plan_stream_degree_intake_path(@plan, stream, degree) %>
+    <td rowspan=<%= degree.intakes.count+1 %>><%= "#{stream.code}.#{degree.code}" %></td>
+    <td rowspan=<%= degree.intakes.count+1 %>>
+      <%= degree.code_text %>
     </td>
-    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= degree.duration_text %></td>
-    <td rowspan=<%= degree.intakes.count+1+degree.intakes.flat_map(&:specializations).count %>><%= degree.entrance_exams.map(&:title).join(', ') %></td>
+    <td rowspan=<%= degree.intakes.count+1 %>><%= degree.entrance_exams.map(&:title).join(', ') %></td>
   </tr>
-  <% degree.intakes.each do |intake| %>
+  <% degree.intakes.order(:tuition).each do |intake| %>
     <tr>
-      <td rowspan=<%= intake.specializations.count+1 %>>
-        <%= intake.tuition_text %>
-        <%= link_to 'Редактировать набор', edit_plan_stream_degree_intake_path(@plan, stream, degree, intake) %>
-        <%= link_to 'Удалить набор', plan_stream_degree_intake_path(@plan, stream, degree, intake), :method => :delete, :confirm => 'Вы уверены?' %>
-      </td>
-      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.budget %></td>
-      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.pay_budget %></td>
-      <td rowspan=<%= intake.specializations.count+1 %>><%= intake.price %></td>
+      <td><%= intake.tuition_text %> </td>
     </tr>
-    <% intake.specializations.each do |specialization| %>
-      <tr>
-        <td><%= specialization.department_abbr %></td>
-        <td><%= specialization.title %></td>
-        <td><%= specialization.budget %></td>
-        <td><%= specialization.pay_budget %></td>
-        <td><%= specialization.density %></td>
-        <td><%= specialization.passing_grade %></td>
-      </tr>
-    <% end %>
   <% end %>
 <% end %>

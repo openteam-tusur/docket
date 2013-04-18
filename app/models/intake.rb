@@ -1,7 +1,7 @@
 class Intake < ActiveRecord::Base
   extend Enumerize
 
-  attr_accessible :price, :tuition, :year, :specializations_attributes
+  attr_accessible :duration, :price, :tuition, :year, :specializations_attributes
 
   belongs_to :degree
   belongs_to :plan
@@ -14,13 +14,16 @@ class Intake < ActiveRecord::Base
 
   accepts_nested_attributes_for :specializations, :allow_destroy => true
 
-  validates_presence_of :price, :tuition
-  validates_uniqueness_of :tuition, :scope => [:degree_id]
+  validates_presence_of :duration, :price
+  validates_uniqueness_of :tuition, :scope => [:duration, :degree_id]
 
+  enumerize :duration, in: [:two_years, :four_years, :five_years, :five_and_half_years, :six_years] , default: :four_years
   enumerize :tuition, in: [:fulltime, :extramural, :evening, :remote], default: :fulltime
 
   delegate :code, :to => :degree, :prefix => true
   delegate :sector_title, :to => :degree
+
+  scope :by_tuition, proc { |tuition| where(:tuition => tuition) }
 
   searchable do
     string :degree_code,           :multiple => true
@@ -53,6 +56,10 @@ class Intake < ActiveRecord::Base
     }.results
   end
 
+  def self.tuition_values
+    Hash[tuition.values.map{|v| [v.to_s, v.text]} ]
+  end
+
   def budget
     specializations.sum(:budget)
   end
@@ -63,5 +70,15 @@ class Intake < ActiveRecord::Base
 
   def entrance_exams_titles
     entrance_exams.map(&:title)
+  end
+
+  def to_s
+    ''.tap do |s|
+      s << stream.to_s
+      s << ', '
+      s << degree.code_text.mb_chars.downcase
+      s << ', '
+      s << tuition_text.mb_chars.downcase
+    end
   end
 end

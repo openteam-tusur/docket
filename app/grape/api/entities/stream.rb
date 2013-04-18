@@ -3,8 +3,9 @@ class API::Entities::Stream < Grape::Entity
   expose :pay_budget
   expose :price
   expose :tuition_text
+  expose :duration_text
   expose(:exams) { |model, options| model.entrance_exams.map(&:title) }
-  expose(:degree) { |model, options| model.degree.as_json(:only => [:code, :duration]) }
+  expose(:degree) { |model, options| model.degree.as_json(:only => [:code]) }
   expose :sector_title, :as => :sector
   expose(:stream) { |model, options| model.stream.as_json(:only => [:code, :title]) }
 

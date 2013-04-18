@@ -77,11 +77,28 @@ def import_streams
       p record['degree']
     end
 
-    degree = stream.degrees.find_or_create_by_code_and_duration(:code => record['degree'], :duration => duration, :entrance_exam_ids => plan.entrance_exams.where(:title => record['exams'].split(', ')).map(&:id) )
+    degree = stream.degrees.find_or_initialize_by_code(:code => record['degree']) do |d|
+      if d.new_record?
+        d.tuitions = ['fulltime']
+        d.entrance_exam_ids = plan.entrance_exams.where(:title => record['exams'].split(', ')).map(&:id)
+        d.save!(:validate => false)
+      end
+    end
 
-    intake = degree.intakes.find_or_create_by_price_and_tuituion(:price => 0, :tuition => :fulltime)
+    intake = degree.intakes.find_or_initialize_by_duration_and_tuition(:duration => duration, :tuition => :fulltime) do |i|
+      i.save!(:validate => false) if i.new_record?
+    end
 
-    specialization = intake.specializations.find_or_create_by_density_and_passing_grade_and_title_and_budget_and_pay_budget(:budget => 0, :pay_budget => 0, :density => 0, :passing_grade => 0, :title => record['prf_title'], :department_id => Department.find_by_abbr(record['dep']).id)
+    specialization = intake.
+      specializations.
+      find_or_create_by_budget_and_density_and_department_id_and_passing_grade_and_pay_budget_and_title(
+        :budget => 0,
+        :density => 0,
+        :department_id => Department.find_by_abbr(record['dep']).id,
+        :passing_grade => 0,
+        :pay_budget => 0,
+        :title => record['prf_title']
+      )
 
     bar.increment!
   end

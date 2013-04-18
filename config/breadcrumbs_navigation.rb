@@ -19,12 +19,17 @@ SimpleNavigation::Configuration.run do |navigation|
         inner.item :edit, 'Редактирование вступительного испытания', edit_plan_entrance_exam_path(@plan, @entrance_exam) if @entrance_exam && @entrance_exam.persisted?
       end
 
-      sub.item :new_stream, 'Новое направление', new_plan_stream_path(@plan) if @stream && @stream.new_record?
-      sub.item :edit_stream, 'Редактирование направления', edit_plan_stream_path(@plan, @stream) if @stream && @stream.persisted?
+      sub.item :streams, 'Направления подготовки', plan_streams_path(@plan) do |inner|
+        inner.item :new, 'Новое направление', new_plan_stream_path(@plan) if @stream && @stream.new_record?
+        inner.item :edit, 'Редактирование направления', edit_plan_stream_path(@plan, @stream) if @stream && @stream.persisted?
+      end
 
-      sub.item :new_intake, 'Новый набор', new_plan_stream_degree_intake_path(@plan, @stream, @degree) if @intake && @intake.new_record?
-      sub.item :edit_intake, 'Редактирование набора', edit_plan_stream_degree_intake_path(@plan, @stream, @degree, @intake) if @intake && @intake.persisted?
-
+      sub.item :intakes, 'Профили и КЦП', plan_scoped_intakes_path(@plan, :by_tuition => @intake.try(:tuition)), :highlights_on => /intake/ do |inner|
+        inner.item :new_intake, 'Новый набор', new_plan_stream_degree_intake_path(@plan, @stream, @degree) if @intake && @intake.new_record?
+        inner.item :edit_intake, 'Редактирование набора', edit_plan_stream_degree_intake_path(@plan, @stream, @degree, @intake) if @intake && @intake.persisted?
+      end
     end if @plan && @plan.persisted?
+
+    primary.item :plan, 'Новый план набора', new_plan_path if @plan && @plan.new_record?
   end
 end

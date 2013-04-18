@@ -1,0 +1,34 @@
+<% specialization_count = intake.specializations.count > 0 ? intake.specializations.count : 1 %>
+<tr>
+  <td rowspan=<%= specialization_count+1 %>><%= [intake.stream.code, intake.degree.code].join('.') %></td>
+  <td rowspan=<%= specialization_count+1 %>><%= intake.stream.title %></td>
+  <td rowspan=<%= specialization_count+1 %>>
+    <%= intake.tuition_text %>
+    <%= link_to 'Редактировать набор', edit_plan_stream_degree_intake_path(@plan, intake.stream, intake.degree, intake) %>
+  </td>
+  <td rowspan=<%= specialization_count+1 %>><%= intake.duration_text %></td>
+  <td rowspan=<%= specialization_count+1 %>><%= intake.budget %></td>
+  <td rowspan=<%= specialization_count+1 %>><%= intake.pay_budget %></td>
+  <td rowspan=<%= specialization_count+1 %>><%= intake.price %></td>
+</tr>
+<% if intake.specializations.any? %>
+<% intake.specializations.order(:title).each do |specialization| %>
+  <tr>
+    <td><%= specialization.title %></td>
+    <td><%= specialization.department_abbr %></td>
+    <td><%= specialization.budget %></td>
+    <td><%= specialization.pay_budget %></td>
+    <td><%= specialization.density %></td>
+    <td><%= specialization.passing_grade %></td>
+  </tr>
+<% end %>
+<% else %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+<% end %>

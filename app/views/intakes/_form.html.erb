@@ -1,6 +1,6 @@
 <%= simple_nested_form_for [@plan, @stream, @degree, @intake] do |f| %>
   <%= f.input :price, :wrapper_html => { :class => 'min_width' } %>
-  <%= f.input :tuition, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'normal_width' } %>
+  <%= f.input :duration, :include_blank => '- не выбрано -', :wrapper_html => { :class => 'min_width' } %>
 
   <%= f.fields_for :specializations %>
   <%= f.link_to_add 'добавить профиль', :specializations %>
