@@ -9,7 +9,7 @@ class Specialization < ActiveRecord::Base
   delegate :abbr, :to => :department, :prefix => true
   delegate :title, :to => :department, :prefix => true
 
-  validates_presence_of :budget, :density, :passing_grade, :department_id
+  validates_presence_of :budget, :department_id
   validates_uniqueness_of :title, :scope => [:department_id, :intake_id]
 
   after_create :set_title, :unless => :title?

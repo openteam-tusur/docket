@@ -25,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render intakes.sort %>
+          <%= render intakes.sort{|a,b| a.stream.code <=> b.stream.code} %>
         </tbody>
       </table>
     </div>
